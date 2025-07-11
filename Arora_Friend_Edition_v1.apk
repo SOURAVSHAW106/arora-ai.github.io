@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Arora - Friend Edition</title>
+  <style>
+    body { background: #121212; color: white; text-align: center; font-family: sans-serif; padding-top: 10%; }
+    a {
+      font-size: 1.5rem;
+      color: #ffbd69;
+      background: #222;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🤝 Arora App - Friend Edition</h1>
+  <p>Enhanced Music • Soft Effects • Clean UI</p>
+  <a href="Arora_Friend_Edition_v1.apk" download>📥 Download Friend Edition APK</a>
+</body>
+</html>
