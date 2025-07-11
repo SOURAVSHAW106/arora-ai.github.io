@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arora App Portal</title>
+  <style>
+    body { font-family: Arial; background: #000; color: white; text-align: center; padding: 40px; }
+    .section { display: none; margin-top: 30px; }
+    .visible { display: block; }
+    .hidden { display: none; }
+    input[type="password"] { padding: 10px; font-size: 16px; width: 200px; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Arora App</h1>
+  <p>Enter your password to continue:</p>
+
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <br>
+  <button onclick="checkPassword()">Enter</button>
+
+  <!-- FATHER'S SECTION -->
+  <div id="fatherSection" class="section">
+    <h2>Hello Papa</h2>
+    <p>This is your clean version of Arora with safe sound modes.</p>
+    <a href="father_arora.apk" download><button>Download Your App</button></a>
+  </div>
+
+  <!-- SHREYA'S SECTION -->
+  <div id="shreyaSection" class="section">
+    <h2>Hi Shreya 🌸</h2>
+    <p>This is your personal version with special features just for you.</p>
+    <a href="shreya_arora.apk" download><button>Download Your App</button></a>
+  </div>
+
+  <!-- SOURAV'S SECTION -->
+  <div id="souravSection" class="section">
+    <h2>Developer Mode: Sourav</h2>
+    <p>This version contains full features and AI control panel.</p>
+    <a href="sourav_arora.apk" download><button>Download Your App</button></a>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value.toLowerCase();
+
+      // Hide all first
+      document.getElementById("fatherSection").classList.remove("visible");
+      document.getElementById("shreyaSection").classList.remove("visible");
+      document.getElementById("souravSection").classList.remove("visible");
+
+      // Show correct section
+      if (password === "shaw") {
+        document.getElementById("fatherSection").classList.add("visible");
+      } else if (password === "shreya") {
+        document.getElementById("shreyaSection").classList.add("visible");
+      } else if (password === "sourav") {
+        document.getElementById("souravSection").classList.add("visible");
+      } else {
+        alert("Wrong password. Try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>
