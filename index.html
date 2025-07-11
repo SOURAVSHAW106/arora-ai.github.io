@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Arora App Access</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arora App Downloads</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #111;
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #000000, #1a1a2e);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      text-align: center;
+      padding: 2rem;
     }
     input, button {
-      padding: 10px;
-      margin: 10px;
-      font-size: 18px;
+      padding: 0.7rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #00c6ff;
+      color: black;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    .downloads {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #555;
+      border-radius: 10px;
+      background-color: #111;
+    }
+    a {
+      color: #00c6ff;
+      display: block;
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
-  <h1>🔐 Enter Your Password</h1>
-  <input type="password" id="password" placeholder="Enter Password">
-  <button onclick="checkPassword()">Enter</button>
-  <p id="error" style="color: red;"></p>
+
+  <h1>🔒 Arora App Secure Access</h1>
+  <p>Please enter your password to view your version of Arora:</p>
+
+  <input type="password" id="password" placeholder="Enter password..." />
+  <br/>
+  <button onclick="checkPassword()">Unlock</button>
+
+  <div id="father" class="downloads hidden">
+    <h2>👨 Father Edition</h2>
+    <a href="Father_Edition.apk" download>Download Father Edition APK</a>
+    <p>Clean UI, Safe Listening, Auto Enhancement</p>
+  </div>
+
+  <div id="sourav" class="downloads hidden">
+    <h2>👨‍💻 Developer Edition (Sourav)</h2>
+    <a href="Sourav_Edition.apk" download>Download Developer Edition APK</a>
+    <p>All features unlocked, AI control panel, advanced tools</p>
+  </div>
+
+  <div id="shreya" class="downloads hidden">
+    <h2>🎤 Shreya’s Special Edition</h2>
+    <a href="Shreya_Edition.apk" download>Download Shreya Edition APK</a>
+    <p>Private vocal tools, anime themes, personal AI assistant</p>
+  </div>
 
   <script>
     function checkPassword() {
-      const pass = document.getElementById("password").value.trim().toLowerCase();
-      if (pass === "shreya28") {
-        window.location.href = "shreya.html";
-      } else if (pass === "shaw") {
-        window.location.href = "father.html";
-      } else if (pass === "sourav") {
-        window.location.href = "sourav.html";
+      const input = document.getElementById('password').value.trim().toLowerCase();
+      const father = document.getElementById('father');
+      const sourav = document.getElementById('sourav');
+      const shreya = document.getElementById('shreya');
+
+      // Hide all first
+      father.classList.add('hidden');
+      sourav.classList.add('hidden');
+      shreya.classList.add('hidden');
+
+      if (input === 'father2025') {
+        father.classList.remove('hidden');
+      } else if (input === 'souravdev') {
+        sourav.classList.remove('hidden');
+      } else if (input === 'shreyaai') {
+        shreya.classList.remove('hidden');
       } else {
-        window.location.href = "friends.html"; // all others go here
+        alert('Incorrect password. Please try again.');
       }
     }
   </script>
