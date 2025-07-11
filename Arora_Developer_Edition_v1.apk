@@ -4,17 +4,11 @@
   <meta charset="UTF-8" />
   <title>Arora - Developer Edition</title>
   <style>
-    body {
-      background-color: #0d0d0d;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 10%;
-    }
+    body { background: #0d0d0d; color: white; text-align: center; font-family: sans-serif; padding-top: 10%; }
     a {
       font-size: 1.5rem;
       color: #00ffae;
-      background: #ffffff10;
+      background: #222;
       padding: 1rem 2rem;
       border-radius: 10px;
       text-decoration: none;
@@ -25,7 +19,7 @@
 </head>
 <body>
   <h1>👨‍💻 Arora App - Developer Edition</h1>
-  <p>Full Features • AI Tools • Master Controls</p>
+  <p>Full Access • AI Plugin Control • Master Mode</p>
   <a href="Arora_Developer_Edition_v1.apk" download>📥 Download Developer Edition APK</a>
 </body>
 </html>
