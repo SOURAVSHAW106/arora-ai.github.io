@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arora App Access</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #111, #222);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input[type="password"] {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      margin: 1rem 0;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #00c6ff;
+      color: white;
+      cursor: pointer;
+    }
+
+    .download-link {
+      margin-top: 2rem;
+    }
+
+    video {
+      margin-top: 1.5rem;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Arora</h1>
+  <p>🔐 Enter your access password to continue:</p>
+  <input type="password" id="passwordInput" placeholder="Enter your password..." />
+  <br />
+  <button onclick="checkPassword()">Unlock</button>
+
+  <div id="content" class="hidden">
+    <h2>✅ Access Granted</h2>
+    <p>Watch the tutorial video below before downloading the app:</p>
+    <video controls>
+      <source src="tutorial.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="download-link">
+      <p>👇 Download the app here:</p>
+      <a href="arora.apk" download>
+        <button>Download App</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value.trim();
+      const allowedPasswords = ["sourav", "shaw", "shreya28"];
+
+      if (allowedPasswords.includes(input.toLowerCase())) {
+        document.getElementById('content').classList.remove('hidden');
+        document.querySelector('input').disabled = true;
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
