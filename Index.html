@@ -1,67 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Arora App Portal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arora App Download</title>
   <style>
-    body { font-family: Arial; background: #000; color: white; text-align: center; padding: 40px; }
-    .section { display: none; margin-top: 30px; }
-    .visible { display: block; }
-    input[type="password"] { padding: 10px; font-size: 16px; width: 200px; }
-    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; cursor: pointer; }
-    a button { background-color: #1f1f1f; color: white; border: none; border-radius: 8px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 15px;
+      width: 100%;
+      font-size: 16px;
+    }
+    #videoContainer {
+      margin-top: 20px;
+      display: none;
+    }
+    #downloadBtn {
+      display: none;
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #downloadBtn:hover {
+      background: #0056b3;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to Arora App</h1>
-  <p>Please enter your access password:</p>
+<div class="container">
+  <h2>Welcome to Arora</h2>
+  <p>Please enter your password to continue:</p>
 
-  <input type="password" id="passwordInput" placeholder="Enter password">
-  <br>
-  <button onclick="checkPassword()">Enter</button>
+  <input type="password" id="passwordInput" placeholder="Enter password..." />
+  <button onclick="checkPassword()">Submit</button>
 
-  <!-- FATHER'S SECTION -->
-  <div id="fatherSection" class="section">
-    <h2>Hello Papa 👨‍👧</h2>
-    <p>This is your clean version of Arora with safe sound modes.</p>
-    <a href="father_arora.zip" download><button>Download Your App</button></a>
+  <div id="videoContainer">
+    <h3>Tutorial Video</h3>
+    <p><strong>Note:</strong> Please watch this video before downloading the app.</p>
+    <video id="tutorialVideo" width="100%" controls>
+      <source src="https://your-link.com/tutorial.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 
-  <!-- SHREYA'S SECTION -->
-  <div id="shreyaSection" class="section">
-    <h2>Hi Shreya 🌸</h2>
-    <p>This is your personal version with special features made just for you.</p>
-    <a href="shreya_arora.zip" download><button>Download Your App</button></a>
-  </div>
+  <a id="downloadBtn" href="#" download>
+    <button id="downloadButton">Download App</button>
+  </a>
+</div>
 
-  <!-- SOURAV'S SECTION -->
-  <div id="souravSection" class="section">
-    <h2>Developer Mode: Sourav 👨‍💻</h2>
-    <p>This version includes all tools, control panel, and update access.</p>
-    <a href="sourav_arora.zip" download><button>Download Your App</button></a>
-  </div>
+<script>
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+    const video = document.getElementById("videoContainer");
+    const downloadLink = document.getElementById("downloadBtn");
+    const downloadBtn = document.getElementById("downloadButton");
 
-  <script>
-    function checkPassword() {
-      const password = document.getElementById("passwordInput").value.toLowerCase();
+    const passwords = {
+      "shaw": "father.apk",
+      "sourav": "friend.apk",
+      "shreya28": "special.apk"
+    };
 
-      // Hide all sections first
-      document.getElementById("fatherSection").classList.remove("visible");
-      document.getElementById("shreyaSection").classList.remove("visible");
-      document.getElementById("souravSection").classList.remove("visible");
-
-      // Show the matching section
-      if (password === "shaw") {
-        document.getElementById("fatherSection").classList.add("visible");
-      } else if (password === "shreya") {
-        document.getElementById("shreyaSection").classList.add("visible");
-      } else if (password === "sourav") {
-        document.getElementById("souravSection").classList.add("visible");
-      } else {
-        alert("Incorrect password. Please try again.");
-      }
+    if (passwords[input]) {
+      video.style.display = "block";
+      downloadLink.style.display = "block";
+      downloadLink.href = passwords[input]; // Link to the APK
+    } else {
+      alert("Incorrect password. Please try again.");
+      video.style.display = "none";
+      downloadLink.style.display = "none";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
