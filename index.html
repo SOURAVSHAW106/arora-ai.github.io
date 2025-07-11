@@ -2,94 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arora App Downloads</title>
+  <title>Arora App – All Editions</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: linear-gradient(to bottom, #000000, #1a1a2e);
+      background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
       color: white;
+      font-family: sans-serif;
       text-align: center;
-      padding: 2rem;
+      padding: 5%;
     }
-    input, button {
-      padding: 0.7rem;
-      margin-top: 1rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
     }
-    button {
-      background-color: #00c6ff;
+    p {
+      color: #999;
+      margin-bottom: 2rem;
+    }
+    .card {
+      display: inline-block;
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      margin: 1rem;
+      width: 280px;
+      box-shadow: 0 0 20px #00000080;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.7rem 1.4rem;
+      background: #00c6ff;
       color: black;
-      cursor: pointer;
-    }
-    .hidden {
-      display: none;
-    }
-    .downloads {
-      margin-top: 2rem;
-      padding: 1rem;
-      border: 1px solid #555;
       border-radius: 10px;
-      background-color: #111;
+      text-decoration: none;
+      font-weight: bold;
     }
-    a {
-      color: #00c6ff;
-      display: block;
-      margin: 0.5rem 0;
+    .subtitle {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 0.4rem;
     }
   </style>
 </head>
 <body>
 
-  <h1>🔒 Arora App Secure Access</h1>
-  <p>Please enter your password to view your version of Arora:</p>
+  <h1>✨ Arora App – Choose Your Edition</h1>
+  <p>Manufactured by Sourav Shaw</p>
 
-  <input type="password" id="password" placeholder="Enter password..." />
-  <br/>
-  <button onclick="checkPassword()">Unlock</button>
-
-  <div id="father" class="downloads hidden">
+  <div class="card">
     <h2>👨 Father Edition</h2>
-    <a href="Father_Edition.apk" download>Download Father Edition APK</a>
-    <p>Clean UI, Safe Listening, Auto Enhancement</p>
+    <div class="subtitle">Clean • Safe • Auto EQ</div>
+    <a class="btn" href="Arora_Father_Edition_v1.apk" download>Download</a>
   </div>
 
-  <div id="sourav" class="downloads hidden">
-    <h2>👨‍💻 Developer Edition (Sourav)</h2>
-    <a href="Sourav_Edition.apk" download>Download Developer Edition APK</a>
-    <p>All features unlocked, AI control panel, advanced tools</p>
+  <div class="card">
+    <h2>👨‍💻 Developer Edition</h2>
+    <div class="subtitle">Full Control • Master Mode</div>
+    <a class="btn" href="Arora_Developer_Edition_v1.apk" download>Download</a>
   </div>
 
-  <div id="shreya" class="downloads hidden">
-    <h2>🎤 Shreya’s Special Edition</h2>
-    <a href="Shreya_Edition.apk" download>Download Shreya Edition APK</a>
-    <p>Private vocal tools, anime themes, personal AI assistant</p>
+  <div class="card">
+    <h2>🎤 Shreya Edition</h2>
+    <div class="subtitle">Anime • Vocal Tools • Private AI</div>
+    <a class="btn" href="Arora_Shreya_Edition_v1.apk" download>Download</a>
   </div>
 
-  <script>
-    function checkPassword() {
-      const input = document.getElementById('password').value.trim().toLowerCase();
-      const father = document.getElementById('father');
-      const sourav = document.getElementById('sourav');
-      const shreya = document.getElementById('shreya');
+  <div class="card">
+    <h2>🤝 Friend Edition</h2>
+    <div class="subtitle">Soft Effects • Music Enhancer</div>
+    <a class="btn" href="Arora_Friend_Edition_v1.apk" download>Download</a>
+  </div>
 
-      // Hide all first
-      father.classList.add('hidden');
-      sourav.classList.add('hidden');
-      shreya.classList.add('hidden');
-
-      if (input === 'father2025') {
-        father.classList.remove('hidden');
-      } else if (input === 'souravdev') {
-        sourav.classList.remove('hidden');
-      } else if (input === 'shreyaai') {
-        shreya.classList.remove('hidden');
-      } else {
-        alert('Incorrect password. Please try again.');
-      }
-    }
-  </script>
 </body>
 </html>
