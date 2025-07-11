@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Arora - Shreya Edition</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 10%;
+    }
+    a {
+      font-size: 1.5rem;
+      color: #ff94e1;
+      background: #ffffff10;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎤 Arora App - Shreya Edition</h1>
+  <p>Anime Themes • Vocal Studio • Personal AI Assistant</p>
+  <a href="Arora_Shreya_Edition_v1.apk" download>📥 Download Shreya Edition APK</a>
+</body>
+</html>
