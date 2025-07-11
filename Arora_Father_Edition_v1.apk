@@ -4,17 +4,11 @@
   <meta charset="UTF-8" />
   <title>Arora - Father Edition</title>
   <style>
-    body {
-      background-color: #101010;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 10%;
-    }
+    body { background: #101010; color: white; text-align: center; font-family: sans-serif; padding-top: 10%; }
     a {
       font-size: 1.5rem;
       color: #00c6ff;
-      background: #ffffff10;
+      background: #222;
       padding: 1rem 2rem;
       border-radius: 10px;
       text-decoration: none;
@@ -25,7 +19,7 @@
 </head>
 <body>
   <h1>👨 Arora App - Father Edition</h1>
-  <p>Clean Interface • Safe Enhancement • Auto Mode Detection</p>
+  <p>Clean UI • Safe Enhancement • Auto Mode Detection</p>
   <a href="Arora_Father_Edition_v1.apk" download>📥 Download Father Edition APK</a>
 </body>
 </html>
