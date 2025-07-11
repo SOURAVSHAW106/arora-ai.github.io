@@ -1,93 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+  <title>Arora App Access</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arora App Download</title>
   <style>
     body {
+      background-color: #0a0a0a;
+      color: white;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
       text-align: center;
-      padding: 20px;
+      padding-top: 100px;
     }
-    .container {
-      background: white;
-      max-width: 400px;
-      margin: 50px auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    input, button {
+    input[type="password"] {
       padding: 10px;
-      margin-top: 15px;
-      width: 100%;
-      font-size: 16px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
     }
-    #videoContainer {
-      margin-top: 20px;
-      display: none;
-    }
-    #downloadBtn {
-      display: none;
-      background: #007BFF;
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #00b894;
       color: white;
       border: none;
+      border-radius: 5px;
+      margin-left: 10px;
       cursor: pointer;
     }
-    #downloadBtn:hover {
-      background: #0056b3;
+    button:hover {
+      background-color: #019875;
     }
   </style>
 </head>
 <body>
+  <h1>Welcome to Arora</h1>
+  <p>Please enter your access password</p>
+  <input type="password" id="password" placeholder="Enter password" />
+  <button onclick="checkPassword()">Enter</button>
 
-<div class="container">
-  <h2>Welcome to Arora</h2>
-  <p>Please enter your password to continue:</p>
-
-  <input type="password" id="passwordInput" placeholder="Enter password..." />
-  <button onclick="checkPassword()">Submit</button>
-
-  <div id="videoContainer">
-    <h3>Tutorial Video</h3>
-    <p><strong>Note:</strong> Please watch this video before downloading the app.</p>
-    <video id="tutorialVideo" width="100%" controls>
-      <source src="https://your-link.com/tutorial.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <a id="downloadBtn" href="#" download>
-    <button id="downloadButton">Download App</button>
-  </a>
-</div>
-
-<script>
-  function checkPassword() {
-    const input = document.getElementById("passwordInput").value;
-    const video = document.getElementById("videoContainer");
-    const downloadLink = document.getElementById("downloadBtn");
-    const downloadBtn = document.getElementById("downloadButton");
-
-    const passwords = {
-      "shaw": "father.apk",
-      "sourav": "friend.apk",
-      "shreya28": "special.apk"
-    };
-
-    if (passwords[input]) {
-      video.style.display = "block";
-      downloadLink.style.display = "block";
-      downloadLink.href = passwords[input]; // Link to the APK
-    } else {
-      alert("Incorrect password. Please try again.");
-      video.style.display = "none";
-      downloadLink.style.display = "none";
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      if (password === "shreya") {
+        window.location.href = "Shreya.html";
+      } else if (password === "shaw") {
+        window.location.href = "father.html";
+      } else if (password === "sourav") {
+        window.location.href = "Sourav.html";
+      } else {
+        alert("Incorrect password");
+      }
     }
-  }
-</script>
-
+  </script>
 </body>
 </html>
