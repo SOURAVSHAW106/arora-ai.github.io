@@ -2,81 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Arora App – All Editions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arora App</title>
   <style>
     body {
-      background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
-      color: white;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 5%;
+      padding: 50px;
+      background: #f0f0f0;
     }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 10px;
     }
-    p {
-      color: #999;
-      margin-bottom: 2rem;
+    #content {
+      display: none;
+      margin-top: 30px;
     }
-    .card {
-      display: inline-block;
-      background: #1e1e1e;
-      border-radius: 16px;
-      padding: 1.5rem 2rem;
-      margin: 1rem;
-      width: 280px;
-      box-shadow: 0 0 20px #00000080;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 1.2rem;
-      padding: 0.7rem 1.4rem;
-      background: #00c6ff;
-      color: black;
+    video {
+      max-width: 100%;
+      border: 2px solid #444;
       border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .subtitle {
-      font-size: 0.95rem;
-      color: #ccc;
-      margin-top: 0.4rem;
     }
   </style>
 </head>
 <body>
 
-  <h1>✨ Arora App – Choose Your Edition</h1>
-  <p>Manufactured by Sourav Shaw</p>
+  <h1>Welcome to Arora</h1>
+  <p>Please enter your password to continue:</p>
+  
+  <input type="password" id="password" placeholder="Enter password" />
+  <button onclick="checkPassword()">Unlock</button>
 
-  <div class="card">
-    <h2>👨 Father Edition</h2>
-    <div class="subtitle">Clean • Safe • Auto EQ</div>
-    <a class="btn" href="Arora_Father_Edition_v1.apk" download>Download</a>
+  <div id="content">
+    <h2>Tutorial Video</h2>
+    <p><strong>Watch this video before downloading the app.</strong></p>
+    <video id="tutorial" controls>
+      <source src="tutorial.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <br /><br />
+    <a id="downloadLink" href="#" download>
+      <button>Download App</button>
+    </a>
   </div>
 
-  <div class="card">
-    <h2>👨‍💻 Developer Edition</h2>
-    <div class="subtitle">Full Control • Master Mode</div>
-    <a class="btn" href="Arora_Developer_Edition_v1.apk" download>Download</a>
-  </div>
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById("password").value.trim().toLowerCase();
+      const content = document.getElementById("content");
+      const download = document.getElementById("downloadLink");
 
-  <div class="card">
-    <h2>🎤 Shreya Edition</h2>
-    <div class="subtitle">Anime • Vocal Tools • Private AI</div>
-    <a class="btn" href="Arora_Shreya_Edition_v1.apk" download>Download</a>
-  </div>
-
-  <div class="card">
-    <h2>🤝 Friend Edition</h2>
-    <div class="subtitle">Soft Effects • Music Enhancer</div>
-    <a class="btn" href="Arora_Friend_Edition_v1.apk" download>Download</a>
-  </div>
+      if (pass === "sourav") {
+        content.style.display = "block";
+        download.href = "friend-version.apk";
+      } else if (pass === "shaw") {
+        content.style.display = "block";
+        download.href = "father-version.apk";
+      } else if (pass === "shreya28") {
+        content.style.display = "block";
+        download.href = "special-version.apk";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    }
+  </script>
 
 </body>
 </html>
